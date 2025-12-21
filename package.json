@@ -11,9 +11,9 @@
     "optimize-check": "npm run validate-images && echo '✅ Imágenes optimizadas correctamente'"
   },
   "dependencies": {
-    "next": "15.3.8",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "next": "16.0.10",
+    "react": "^19.2.2",
+    "react-dom": "^19.2.2",
     "swiper": "^11.2.10"
   },
   "devDependencies": {
