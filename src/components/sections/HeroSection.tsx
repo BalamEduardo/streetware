@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useRef, useEffect, useState } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
+import { smoothScrollTo } from '@/utils/scroll';
+import { BlockList } from 'net';
 
 export default function HeroSection() {
   const mobileVideoRef = useRef<HTMLVideoElement>(null);
@@ -212,31 +213,26 @@ export default function HeroSection() {
       <div className="
         absolute inset-0 z-20
         backdrop-saturate-[150%]
-        backdrop-blur-[3px]
+        backdrop-blur-[5px]
       " />
 
       {/* Contenido Principal */}
       <div className="relative z-30 w-full max-w-4xl mx-auto">
       
       {/* Título Principal - Mobile First + Landscape Responsive */}
-      <h1 
+      <h1
         className="
-          hero-landscape-title
-          text-3xl leading-tight
-          sm:text-4xl sm:leading-tight
-          md:text-5xl md:leading-tight
-          lg:text-6xl lg:leading-tight
-          xl:text-7xl xl:leading-tight
-          font-display
+          text-5xl sm:text-7xl md:text-7xl lg:text-7xl xl:text-8xl
+          font-display bebasneue-font
           mb-4 sm:mb-6 md:mb-8
-          text-white
-          md:text-brand-accent
+          text-white md:text-brand-accent
           tracking-wider
           drop-shadow-lg md:drop-shadow-none
         "
       >
-        STREETWARE<br />
-        <span className="text-brand-yellow">DROP</span> SEASON
+        STREETWARE
+        <br />
+        DROP SEASON
       </h1>
 
       {/* Subtítulo - Mobile First + Landscape Responsive */}
@@ -276,10 +272,9 @@ export default function HeroSection() {
           mx-auto
         "
       >
-      <Link
-      href="#productos"
+      <button
+      onClick={() => smoothScrollTo('#productos')}
       className="
-        hero-landscape-button
         w-full md:w-auto
         px-6 py-3
         sm:px-8 sm:py-4
@@ -291,24 +286,25 @@ export default function HeroSection() {
         uppercase
         tracking-wide
         rounded-lg
+        border-2 border-white
         shadow-lg
-        hover:bg-brand-yellow
+        hover:bg-[#ffffff46]
         hover:shadow-xl
         transition-all duration-300
         active:scale-95
       "
       >
       Ver colección
-      </Link>
+      </button>
       
-      <Link
-      href="#nosotros"
+      <button
+      onClick={() => smoothScrollTo('#nosotros')}
       className="
-        hero-landscape-button
         w-full md:w-auto
         px-6 py-3
         sm:px-8 sm:py-4
         md:px-10 md:py-4
+        backdrop-blur-sm
         border-2 border-white
         md:border-brand-accent
         text-white
@@ -319,14 +315,14 @@ export default function HeroSection() {
         tracking-wide
         rounded-lg
         shadow-lg
-        hover:bg-white hover:text-brand
+        hover:bg-[#ffffff4b] hover:text-brand
         md:hover:bg-brand-accent md:hover:text-white
         transition-all duration-300
-        active:scale-95
+        hover:scale-105
       "
       >
       Saber más
-      </Link>
+      </button>
       </div>
       </div>
     </section>

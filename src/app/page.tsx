@@ -10,14 +10,14 @@ import StorytellingBlock from '@/components/sections/StorytellingBlock';
 
 export default function HomePage() {
   return (
-    <>
+    <main>
       <HeroSection />
       
       {/* Transición: Filosofía de la marca */}
       <StorytellingBlock
-        subtitle="Nuestra Filosofía"
-        title="Más que ropa, somos una declaración de independencia"
-        description="Cada pieza que creamos nace de la necesidad de expresar autenticidad en un mundo que busca uniformidad. No seguimos tendencias, las creamos. No imitamos estilos, los redefinimos."
+        subtitle="Streetwear con Propósito"
+        title="La moda urbana que transforma tu actitud"
+        description="No solo vestimos cuerpos, inspiramos mentes. Cada prenda es una declaración de autenticidad y rebeldía, pensada para quienes buscan destacar y dejar huella en cada paso."
         theme="gradient"
         position="center"
       />
@@ -47,6 +47,6 @@ export default function HomePage() {
       <LookbookSection/>
       <AboutSection />
       <ContactSection />
-    </>
+    </main>
   );
 }

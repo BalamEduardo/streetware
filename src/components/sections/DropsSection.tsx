@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import ImageSlider from '../ui/ImageSlider';
+import { smoothScrollTo } from '@/utils/scroll';
 
 export default function DropsSection() {
 
@@ -38,12 +39,9 @@ export default function DropsSection() {
     ]
   };
 
-  // Función para navegar a la sección productos temporalmente
+  // Función para navegar a la sección productos con scroll suave
   const handleViewCollection = () => {
-    const productosSection = document.getElementById('productos');
-    if (productosSection) {
-      productosSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    smoothScrollTo('#productos');
   };
 
   const getStatusStyles = (status: string) => {

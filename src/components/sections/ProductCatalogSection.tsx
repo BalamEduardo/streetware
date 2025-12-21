@@ -55,13 +55,13 @@ function ProductCard({ product, showAllProducts = false }: ProductCardProps) {
     
   return (
     <Link href={href} className="block">
-      <div className="bg-white/10 rounded-lg overflow-hidden group cursor-pointer hover:scale-105 transition-transform duration-300">
+      <div className="bg-white/10 rounded-md overflow-hidden group cursor-pointer hover:scale-105 transition-transform duration-300">
         <div className="h-80 bg-gray-400 flex items-center justify-center group-hover:bg-gray-300 transition">
           <span className="text-gray-600 font-body">Product Image</span>
         </div>
         <div className="p-4">
           <h3 className="font-display text-lg mb-1 text-white">{product.name}</h3>
-          <p className="font-body text-sm text-white/70 mb-2">
+          <p className="font-body text-sm text-white/70 line-clamp-1 mb-2">
             {product.description}
           </p>
           <div className="flex justify-between items-center">
@@ -92,7 +92,8 @@ export default function ProductCatalogSection({
       category: 'hoodies',
       stock: 25,
       isLimited: false,
-      slug: 'urban-rebellion-hoodie'
+      slug: 'urban-rebellion-hoodie',
+      
     },
     {
       id: 'ur-tshirt-01',
@@ -171,7 +172,7 @@ export default function ProductCatalogSection({
     : products.filter(product => product.category === activeFilter);
 
   // En modo preview, solo mostrar los primeros 4 productos destacados
-  const displayProducts = showAllProducts ? filteredProducts : filteredProducts.slice(0, 4);
+  const displayProducts = showAllProducts ? filteredProducts : filteredProducts.slice(0, 3);
 
   return (
     <section id="productos" className="py-20 px-4 bg-white/5">
@@ -192,7 +193,7 @@ export default function ProductCatalogSection({
           />
         )}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {displayProducts.map((product) => (
             <ProductCard key={product.id} product={product} showAllProducts={showAllProducts} />
           ))}
